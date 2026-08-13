@@ -1,0 +1,97 @@
+:root{
+  --ink:#17102b;
+  --deep:#241a3d;
+  --brand:#4b3a8f;
+  --brand-lt:#6b55b8;
+  --paper:#ece6f7;
+  --paper-2:rgba(236,230,247,.74);
+  --paper-3:rgba(236,230,247,.52);
+  --accent:#f0a03c;
+  --accent-2:#c9761d;
+  --surface:#faf7fd;
+  --g-bg:linear-gradient(158deg,rgba(236,230,247,.15),rgba(75,58,143,.20) 58%,rgba(23,16,43,.28));
+  --g-line:rgba(236,230,247,.22);
+  --g-shadow:0 26px 74px rgba(18,12,34,.44);
+  --g-inset:inset 0 1px 0 rgba(255,255,255,.24);
+  --r:26px;
+  --r-sm:16px;
+  --maxw:1180px;
+  --sec-y:34px;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:'Inter',system-ui,-apple-system,sans-serif;
+  background:var(--ink);
+  color:var(--paper);
+  line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:clip;
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+
+/* ---------- TYPE ---------- */
+.d1,.d2,.d3,.d4{font-family:'Outfit',system-ui,sans-serif;text-transform:uppercase;letter-spacing:-.018em;font-weight:800;line-height:.87;color:var(--surface)}
+.d1{font-size:clamp(48px,8.6vw,112px)}
+.d2{font-size:clamp(30px,4.6vw,54px);line-height:.94}
+.d3{font-size:clamp(21px,2.5vw,30px);line-height:1.04;font-weight:700;letter-spacing:-.01em}
+.d4{font-size:clamp(16px,1.6vw,19px);line-height:1.14;font-weight:700;letter-spacing:.005em}
+.lime{color:var(--accent)}
+.lede{font-size:clamp(15px,1.35vw,17.5px);color:var(--paper-2);max-width:44ch}
+.body-s{font-size:14.5px;color:var(--paper-2);line-height:1.66}
+.kicker{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--paper-3)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 18px}
+
+/* ---------- SCENES (simplified background: color gradients only) ---------- */
+.scenes{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;background:var(--brand)}
+.scene{position:absolute;inset:0;opacity:0;transition:opacity 1.5s ease}
+.scene.on{opacity:1}
+.s1{background:linear-gradient(178deg,#1ea38d 0%,#0b8578 22%,#017069 48%,#4b3a8f 74%,#01524e 100%)}
+.s2{background:linear-gradient(178deg,#12907f 0%,#04756e 26%,#4b3a8f 58%,#01514d 100%)}
+.s3{background:linear-gradient(178deg,#067c71 0%,#00625d 30%,#014e4a 64%,#023c39 100%)}
+.s4{background:linear-gradient(178deg,#036359 0%,#014b46 32%,#013431 66%,#012422 100%)}
+.vig{position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(126% 86% at 50% 28%,transparent 38%,rgba(1,50,46,.20) 78%,rgba(1,34,32,.44) 100%),
+             linear-gradient(180deg,rgba(1,38,36,.30) 0%,transparent 18%,transparent 66%,rgba(1,32,30,.40) 100%)}
+
+/* ---------- GLASS ---------- */
+.glass{
+  background:var(--g-bg);
+  backdrop-filter:blur(24px) saturate(150%);
+  -webkit-backdrop-filter:blur(24px) saturate(150%);
+  border:1px solid var(--g-line);
+  border-radius:var(--r);
+  box-shadow:var(--g-shadow),var(--g-inset);
+  position:relative;
+  overflow:hidden;
+}
+.glass::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;
+  background:linear-gradient(115deg,rgba(255,255,255,.16),transparent 30%,transparent 72%,rgba(240,160,60,.07))}
+.glass-2{
+  background:linear-gradient(158deg,rgba(236,230,247,.10),rgba(0,48,46,.22));
+  backdrop-filter:blur(18px) saturate(135%);
+  -webkit-backdrop-filter:blur(18px) saturate(135%);
+  border:1px solid rgba(236,230,247,.16);
+  border-radius:var(--r);
+  box-shadow:0 18px 48px rgba(18,12,34,.36),inset 0 1px 0 rgba(255,255,255,.16);
+  position:relative;overflow:hidden;
+}
+
+/* ---------- BUTTONS ---------- */
+.btn{display:inline-flex;align-items:center;gap:10px;height:46px;padding:0 22px;border-radius:999px;
+  font-size:12.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;transition:.35s var(--ease);white-space:nowrap}
+.btn svg{width:15px;height:15px;flex:0 0 auto}
+.btn-primary{background:linear-gradient(135deg,var(--accent-2),#5d8d1c);color:#08211a;box-shadow:0 12px 30px rgba(201,118,29,.34),inset 0 1px 0 rgba(255,255,255,.34)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 18px 40px rgba(201,118,29,.44),inset 0 1px 0 rgba(255,255,255,.4)}
+.btn-ghost{background:rgba(236,230,247,.10);border:1px solid rgba(236,230,247,.30);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);color:var(--surface)}
+.btn-ghost:hover{background:rgba(236,230,247,.18);transform:translateY(-2px)}
+.btn-sm{height:38px;padding:0 18px;font-size:11px;letter-spacing:.14em}
+
+/* ---------- REVEAL (scroll-in animation) ---------- */
+.rv{opacity:0;transform:translateY(30px);filter:blur(7px);transition:opacity .95s var(--ease),transform .95s var(--ease),filter .95s var(--ease)}
+.rv.in{opacity:1;transform:none;filter:none}
+.rv-d1{transition-delay:.09s}.rv-d2{transition-delay:.18s}.rv-d3{transition-delay:.27s}.rv-d4{transition-delay:.36s}.rv-d5{transition-delay:.45s}
