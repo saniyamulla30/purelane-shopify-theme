@@ -1,0 +1,56 @@
+/* ---------- SHOP GRID ---------- */
+.shelf{display:grid;gap:14px;grid-template-columns:repeat(2,1fr)}
+@media(min-width:860px){.shelf{grid-template-columns:repeat(4,1fr)}}
+
+.card{padding:16px;display:flex;flex-direction:column;transition:.4s var(--ease,ease)}
+.card:hover{transform:translateY(-5px)}
+
+.card .shot{
+  height:150px;border-radius:14px;margin-bottom:14px;
+  display:grid;place-items:center;position:relative;overflow:hidden;
+  background:linear-gradient(160deg,rgba(255,255,255,.60),rgba(236,230,247,.42));
+}
+@media(max-width:600px){.card .shot{height:126px}}
+
+.card .shot .pimg{
+  max-height:100%;max-width:100%;
+  height:auto;width:auto;
+  object-fit:contain;
+  filter:drop-shadow(0 8px 13px rgba(0,74,66,.13));
+}
+
+.card .shot .pimg-placeholder{
+  display:grid;place-items:center;
+  width:56px;height:56px;
+  color:rgba(1,63,61,.4);
+}
+.card .shot .pimg-placeholder svg{width:32px;height:32px}
+
+.card .pill{
+  position:absolute;top:9px;left:9px;
+  font-size:8.5px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;
+  padding:5px 9px;border-radius:20px;
+  background:rgba(255,255,255,.86);border:1px solid rgba(201,118,29,.34);color:#4f7d10;
+}
+.card .pill.pill-sold{
+  background:rgba(60,60,60,.78);border:1px solid rgba(255,255,255,.2);color:#f3f3f3;
+}
+
+.card h4{
+  font-family:'Outfit',sans-serif;font-size:13.5px;font-weight:700;
+  text-transform:uppercase;letter-spacing:.03em;color:var(--surface);line-height:1.25;
+  margin-bottom:7px;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;
+}
+
+.card .rate{font-size:11.5px;color:var(--paper-2);margin-bottom:10px;display:flex;align-items:center;gap:5px}
+.card .rate b{color:var(--accent);font-weight:700}
+
+.card .pr{margin-top:auto;display:flex;align-items:baseline;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.card .pr strong{font-family:'Outfit',sans-serif;font-size:18px;color:var(--surface);font-weight:700}
+.card .pr s{font-size:12px;color:var(--paper-3)}
+.card .pr em{font-style:normal;font-size:10px;font-weight:800;letter-spacing:.08em;color:var(--accent)}
+
+.card .btn{width:100%;justify-content:center}
+.card .btn[disabled]{opacity:.5;cursor:not-allowed}
+.card form{width:100%}
