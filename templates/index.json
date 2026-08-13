@@ -9,76 +9,71 @@
  */
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "purelane_hero_Ckf3gQ": {
+      "type": "purelane-hero",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "slide_k88A6C": {
+          "type": "slide",
+          "name": "Any 3 products",
           "settings": {
-            "heading": "Browse our latest products",
-            "heading_size": "h0"
+            "product_1": "tap-cleaner-limescale-remover",
+            "product_2": "copper-bronze-brass-cleaner",
+            "product_3": "foaming-kitchen-cleaner",
+            "slide_label": "Any 3 products",
+            "price": "₹499",
+            "compare_price": "₹897",
+            "savings_tag": "₹398"
           }
         },
-        "button": {
-          "type": "buttons",
+        "slide_LXNMwR": {
+          "type": "slide",
+          "name": "Any 2 products",
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "product_1": "tap-cleaner-limescale-remover",
+            "product_2": "foaming-kitchen-cleaner",
+            "product_3": "",
+            "slide_label": "Any 2 products",
+            "price": "₹349",
+            "compare_price": "₹598",
+            "savings_tag": "₹249"
+          }
+        },
+        "slide_hzkyGj": {
+          "type": "slide",
+          "name": "Single Bottle",
+          "settings": {
+            "product_1": "foaming-kitchen-cleaner",
+            "product_2": "",
+            "product_3": "",
+            "slide_label": "Single bottle",
+            "price": "₹200",
+            "compare_price": "₹299",
+            "savings_tag": "33% off"
           }
         }
       },
       "block_order": [
-        "heading",
-        "button"
+        "slide_k88A6C",
+        "slide_LXNMwR",
+        "slide_hzkyGj"
       ],
+      "name": "Purelane Hero",
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "image_behavior": "none",
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
-      }
-    },
-    "featured_collection": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "swipe_on_mobile": false,
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "padding_top": 44,
-        "padding_bottom": 36
+        "heading_line1": "Clean",
+        "heading_line2": "That",
+        "heading_accent": "Lasts",
+        "lede": "Homecare that works on the toughest grime, made from plants. Kind to your home, your family and the world outside it.",
+        "cta_primary_text": "Shop now",
+        "cta_primary_link": "",
+        "cta_secondary_text": "How it works",
+        "cta_secondary_link": "",
+        "badge_1": "Plant powered",
+        "badge_2": "Safe for kids & pets",
+        "badge_3": "Zero harsh chemicals"
       }
     }
   },
   "order": [
-    "image_banner",
-    "featured_collection"
+    "purelane_hero_Ckf3gQ"
   ]
 }
