@@ -1,0 +1,144 @@
+<section class="hero" data-scene="1">
+  <div class="hero-grid">
+
+    <div class="badges glass-2" aria-label="Product promises">
+      <div class="badge">
+        <span class="bi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c0-6.5 3.5-11 8-12.5C20 15 16.5 20 12 21Z"/><path d="M12 21C12 14.5 8.5 10 4 8.5 4 15 7.5 20 12 21Z"/></svg></span>
+        <span>{{ section.settings.badge_1 | newline_to_br }}</span>
+      </div>
+      <div class="badge">
+        <span class="bi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4.5 6v6.2c0 4.3 3.1 7.6 7.5 8.8 4.4-1.2 7.5-4.5 7.5-8.8V6L12 3Z"/><path d="m9 12 2.2 2.2L15.4 10"/></svg></span>
+        <span>{{ section.settings.badge_2 | newline_to_br }}</span>
+      </div>
+      <div class="badge">
+        <span class="bi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.4"/><path d="M6.4 17.6 17.6 6.4"/></svg></span>
+        <span>{{ section.settings.badge_3 | newline_to_br }}</span>
+      </div>
+    </div>
+
+    <div class="hero-copy">
+      <h1 class="d1 rv in">
+        {{ section.settings.heading_line1 }}<br>{{ section.settings.heading_line2 }}<br><span class="lime">{{ section.settings.heading_accent }}</span>
+      </h1>
+      <div class="rule rv rv-d1">
+        <i></i>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c0-6.5 3.5-11 8-12.5C20 15 16.5 20 12 21Z"/><path d="M12 21C12 14.5 8.5 10 4 8.5 4 15 7.5 20 12 21Z"/></svg>
+        <i></i>
+      </div>
+      <p class="lede rv rv-d2">{{ section.settings.lede }}</p>
+      <div class="hero-cta rv rv-d3">
+        {% if section.settings.cta_primary_text != blank %}
+          <a class="btn btn-primary" href="{{ section.settings.cta_primary_link }}">{{ section.settings.cta_primary_text }}
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13m-5-6 6 6-6 6"/></svg>
+          </a>
+        {% endif %}
+        {% if section.settings.cta_secondary_text != blank %}
+          <a class="btn btn-ghost" href="{{ section.settings.cta_secondary_link }}">{{ section.settings.cta_secondary_text }}</a>
+        {% endif %}
+      </div>
+
+      <div class="badgestrip rv rv-d4">
+        <div class="glass-2">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c0-6.5 3.5-11 8-12.5C20 15 16.5 20 12 21Z"/><path d="M12 21C12 14.5 8.5 10 4 8.5 4 15 7.5 20 12 21Z"/></svg>
+          {{ section.settings.badge_1 }}
+        </div>
+        <div class="glass-2">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4.5 6v6.2c0 4.3 3.1 7.6 7.5 8.8 4.4-1.2 7.5-4.5 7.5-8.8V6L12 3Z"/><path d="m9 12 2.2 2.2L15.4 10"/></svg>
+          {{ section.settings.badge_2 }}
+        </div>
+        <div class="glass-2">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.4"/><path d="M6.4 17.6 17.6 6.4"/></svg>
+          {{ section.settings.badge_3 }}
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-prod" id="heroProd">
+      <div class="hstage" id="hstage">
+        {% for block in section.blocks %}
+          <div class="hslide {% if block.settings.product_3 != blank %}hs3{% elsif block.settings.product_2 != blank %}hs2{% else %}hs1{% endif %} {% if forloop.first %}on{% endif %}" data-n="{{ forloop.index }}" {{ block.shopify_attributes }}>
+            {% if block.settings.product_1 != blank %}
+              <span class="hp a d1">
+                {% if block.settings.product_1.featured_image %}
+                  <img src="{{ block.settings.product_1.featured_image | image_url: width: 500 }}" alt="{{ block.settings.product_1.title }}" loading="lazy">
+                {% endif %}
+              </span>
+            {% endif %}
+            {% if block.settings.product_2 != blank %}
+              <span class="hp b d2">
+                {% if block.settings.product_2.featured_image %}
+                  <img src="{{ block.settings.product_2.featured_image | image_url: width: 500 }}" alt="{{ block.settings.product_2.title }}" loading="lazy">
+                {% endif %}
+              </span>
+            {% endif %}
+            {% if block.settings.product_3 != blank %}
+              <span class="hp c d3">
+                {% if block.settings.product_3.featured_image %}
+                  <img src="{{ block.settings.product_3.featured_image | image_url: width: 500 }}" alt="{{ block.settings.product_3.title }}" loading="lazy">
+                {% endif %}
+              </span>
+            {% endif %}
+            <div class="glass-2 ptag">
+              <span class="lbl">{{ block.settings.slide_label }}</span>
+              <span class="val">
+                <strong>{{ block.settings.price }}</strong>
+                {% if block.settings.compare_price != blank %}<s>{{ block.settings.compare_price }}</s>{% endif %}
+              </span>
+              {% if block.settings.savings_tag != blank %}<span class="cut">{{ block.settings.savings_tag }}</span>{% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="hdots" id="hdots">
+        {% for block in section.blocks %}
+          <button type="button" class="{% if forloop.first %}on{% endif %}" aria-label="Show slide {{ forloop.index }}"></button>
+        {% endfor %}
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{{ 'section-hero.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'section-hero.js' | asset_url }}" defer="defer"></script>
+
+{% schema %}
+{
+  "name": "Purelane Hero",
+  "settings": [
+    { "type": "text", "id": "heading_line1", "label": "Heading line 1", "default": "Clean" },
+    { "type": "text", "id": "heading_line2", "label": "Heading line 2", "default": "That" },
+    { "type": "text", "id": "heading_accent", "label": "Heading accent word", "default": "Lasts" },
+    { "type": "textarea", "id": "lede", "label": "Description", "default": "Homecare that works on the toughest grime, made from plants. Kind to your home, your family and the world outside it." },
+    { "type": "text", "id": "cta_primary_text", "label": "Primary button text", "default": "Shop now" },
+    { "type": "url", "id": "cta_primary_link", "label": "Primary button link" },
+    { "type": "text", "id": "cta_secondary_text", "label": "Secondary button text", "default": "How it works" },
+    { "type": "url", "id": "cta_secondary_link", "label": "Secondary button link" },
+    { "type": "text", "id": "badge_1", "label": "Badge 1 text", "default": "Plant powered" },
+    { "type": "text", "id": "badge_2", "label": "Badge 2 text", "default": "Safe for kids & pets" },
+    { "type": "text", "id": "badge_3", "label": "Badge 3 text", "default": "Zero harsh chemicals" }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Product slide",
+      "settings": [
+        { "type": "product", "id": "product_1", "label": "Product 1" },
+        { "type": "product", "id": "product_2", "label": "Product 2 (optional)" },
+        { "type": "product", "id": "product_3", "label": "Product 3 (optional)" },
+        { "type": "text", "id": "slide_label", "label": "Slide label", "default": "Single bottle" },
+        { "type": "text", "id": "price", "label": "Price", "default": "₹200" },
+        { "type": "text", "id": "compare_price", "label": "Compare-at price", "default": "₹299" },
+        { "type": "text", "id": "savings_tag", "label": "Savings tag", "default": "33% off" }
+      ]
+    }
+  ],
+  "max_blocks": 3,
+  "presets": [
+    {
+      "name": "Purelane Hero",
+      "blocks": [{ "type": "slide" }]
+    }
+  ]
+}
+{% endschema %}
