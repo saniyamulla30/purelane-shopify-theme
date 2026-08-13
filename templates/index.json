@@ -71,9 +71,22 @@
         "badge_2": "Safe for kids & pets",
         "badge_3": "Zero harsh chemicals"
       }
+    },
+    "purelane_shop_C73jhb": {
+      "type": "purelane-shop",
+      "name": "Purelane Shop",
+      "settings": {
+        "kicker": "Bestsellers",
+        "heading": "Loved by thousands of homes",
+        "collection": "all-products",
+        "products_to_show": 8,
+        "badge_text": "Best seller",
+        "button_text": "Add to cart"
+      }
     }
   },
   "order": [
-    "purelane_hero_Ckf3gQ"
+    "purelane_hero_Ckf3gQ",
+    "purelane_shop_C73jhb"
   ]
 }
