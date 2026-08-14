@@ -21,7 +21,13 @@
               {%- assign product_key = 'product_' | append: i -%}
               {%- assign product = block.settings[product_key] -%}
               {%- if product != blank and product.featured_image != blank -%}
-                <img class="pimg" src="{{ product.featured_image | image_url: width: 160 }}" alt="{{ product.title | escape }}" width="160" height="{{ 160 | divided_by: product.featured_image.aspect_ratio | default: 160 }}" loading="lazy">
+                <img
+                    class="pimg"
+                    src="{{ product.featured_image | image_url: width: 100 }}"
+                    alt="{{ product.featured_image.alt | default: product.title | escape }}"
+                    width="100"
+                    height="{{ 100 | divided_by: product.featured_image.aspect_ratio | default: 100 }}"
+                    loading="lazy">
               {%- endif -%}
             {%- endfor -%}
           </div>
