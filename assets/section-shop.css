@@ -6,16 +6,30 @@
 .card:hover{transform:translateY(-5px)}
 
 .card .shot{
-  height:150px;border-radius:14px;margin-bottom:14px;
-  display:grid;place-items:center;position:relative;overflow:hidden;
+  height:150px;
+  width:100%;
+  border-radius:14px;
+  margin-bottom:14px;
+  display:grid;
+  place-items:center;
+  position:relative;
+  overflow:hidden;
+  min-width:0;
+  min-height:0;
   background:linear-gradient(160deg,rgba(255,255,255,.60),rgba(236,230,247,.42));
 }
 @media(max-width:600px){.card .shot{height:126px}}
 
 .card .shot .pimg{
-  max-height:100%;max-width:100%;
-  height:auto;width:auto;
-  object-fit:contain;
+  display:block;
+  height:100% !important;
+  width:auto !important;
+  max-height:100% !important;
+  max-width:100% !important;
+  object-fit:contain !important;
+  object-position:center !important;
+  min-width:0 !important;
+  min-height:0 !important;
   filter:drop-shadow(0 8px 13px rgba(0,74,66,.13));
 }
 
