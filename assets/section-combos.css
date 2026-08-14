@@ -1,16 +1,25 @@
 /* ---------- BEST SELLING COMBOS ---------- */
 .comborail{
-  display:flex;gap:14px;overflow-x:auto;overflow-y:hidden;
+  display:flex;
+  gap:14px;
+  overflow-x:auto;
+  overflow-y:hidden;
   scroll-snap-type:x mandatory;
-  margin:0 -18px;padding:4px 18px 14px;
-  scrollbar-width:none;-webkit-overflow-scrolling:touch;
+  margin:0;
+  padding:4px 0 14px;
+  scrollbar-width:none;
+  -webkit-overflow-scrolling:touch;
 }
 .comborail::-webkit-scrollbar{display:none}
 
 .combo{
-  flex:0 0 302px;scroll-snap-align:start;
-  display:flex;flex-direction:column;padding:0;
+  flex:0 0 calc((100% - 42px) / 4);
+  scroll-snap-align:start;
+  display:flex;
+  flex-direction:column;
+  padding:0;
   transition:.4s var(--ease,ease);
+  min-width:0;
 }
 .combo:hover{transform:translateY(-5px)}
 
@@ -26,8 +35,17 @@
 }
 
 .combo .save{
-  display:inline-block;font-size:9.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
-  padding:5px 11px;border-radius:999px;margin-bottom:13px;
+  display:inline-block;
+  font-size:9.5px;
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  padding:5px 11px;
+  border-radius:999px;
+  margin-bottom:13px;
+  background:#ffffff;
+  border:1px solid rgba(201,118,29,.34);
+  color:#4f7d10;  padding:5px 11px;border-radius:999px;margin-bottom:13px;
   background:rgba(255,255,255,.84);border:1px solid rgba(201,118,29,.34);color:#4f7d10;
 }
 
@@ -49,7 +67,7 @@
   background:rgba(75,58,143,.08);border:1px dashed rgba(75,58,143,.26);color:var(--accent);
 }
 .stack .it .tile svg{width:17px;height:17px}
-.stack .it span{display:block;font-size:8.6px;line-height:1.32;color:var(--paper-2);font-weight:600}
+.stack .it span{display:block;font-size:8.6px;line-height:1.32;color:#ffffff;font-weight:600}
 .stack .plus{flex:0 0 9px;color:var(--accent);font-weight:800;font-size:12px;padding-bottom:30px;text-align:center}
 
 .combo .body{padding:15px 16px 18px;display:flex;flex-direction:column;flex:1}
@@ -60,7 +78,18 @@
 .combo .cnt{font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--paper-3);margin-top:6px}
 .combo .inc{font-size:12.4px;color:var(--paper-2);line-height:1.55;margin:11px 0 14px;flex:1}
 
-.combo .prow{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;margin-bottom:6px}
+.combo .prow{.combo .prow em{
+  font-style:normal;
+  font-size:9.5px;
+  font-weight:800;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  padding:4px 9px;
+  border-radius:999px;
+  background:#d8f000;
+  border:1px solid #d8f000;
+  color:#263000;
+}}
 .combo .prow strong{font-family:'Outfit',sans-serif;font-size:25px;font-weight:800;color:var(--surface);letter-spacing:-.02em}
 .combo .prow s{font-size:13px;color:var(--paper-3)}
 .combo .prow em{
