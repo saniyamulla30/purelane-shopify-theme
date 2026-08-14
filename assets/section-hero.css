@@ -21,14 +21,14 @@
 .hero-cta{display:flex;gap:11px;flex-wrap:wrap;margin-top:26px}
 
 .hero-prod{
-  flex:0 0 600px;width:600px;position:relative;
+  flex:0 0 680px;width:680px;position:relative;
   margin-left:auto;z-index:2;overflow:hidden;
   filter:drop-shadow(0 34px 54px rgba(2,20,19,.6))
 }
 @media(max-width:1200px){
   .hero-copy{flex-basis:380px;max-width:380px}
-  .hero-prod{flex-basis:420px;width:420px}
-} .hero-prod{flex-basis:340px;width:340px}
+  .hero-prod{flex-basis:480px;width:480px}
+}.hero-prod{flex-basis:340px;width:340px}
 @media(max-width:900px){
   .hero{align-items:flex-end;padding-top:132px}
   .hero-grid{flex-direction:column;align-items:stretch}
@@ -50,7 +50,7 @@
 .badgestrip svg{width:18px;height:18px;margin:0 auto 6px;color:var(--accent)}
 .badgestrip{max-width:460px}
 
-.hstage{position:relative;width:100%;height:clamp(380px,74svh,680px)}
+.hstage{position:relative;width:100%;height:clamp(340px,60svh,540px)}
 .hslide{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:flex-end;
   padding-right:2%;opacity:0;pointer-events:none;transition:opacity .85s var(--ease)}
 .hslide.on{opacity:1;pointer-events:auto}
@@ -64,9 +64,9 @@
 .hslide.on .hp.d2{transition-delay:.30s}
 .hslide.on .hp.d3{transition-delay:.54s}
 
-.hs1 .a{width:68%;z-index:3}
-.hs2 .a{width:44%;margin-right:-5%;z-index:1}
-.hs2 .b{width:54%;z-index:3}
+.hs1 .a{width:76%;z-index:3}
+.hs2 .a{width:50%;margin-right:-5%;z-index:1}
+.hs2 .b{width:60%;z-index:3}
 .hs3 .a{width:31%;margin-right:-4%;z-index:1;order:1}
 .hs3 .c{width:40%;z-index:3;order:2}
 .hs3 .b{width:32%;margin-left:-4%;z-index:2;order:3}
