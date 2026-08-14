@@ -43,7 +43,12 @@
 .tier .qty small{font-size:14px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--paper-3);display:block;margin-top:6px}
 
 .tier .price{font-family:'Outfit',sans-serif;font-weight:700;font-size:27px;color:var(--accent);margin:16px 0 4px}
-.tier .price s{font-size:14px;color:var(--paper-3);font-weight:500;margin-left:8px}
+.tier .price s{
+  font-size:17px;
+  color:var(--paper-3);
+  font-weight:500;
+  margin-left:8px;
+}
 
 .tier ul{
   list-style:none;
