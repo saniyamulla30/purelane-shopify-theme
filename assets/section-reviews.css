@@ -46,3 +46,6 @@
   .rcard{width:250px;padding:13px 14px}
   .revtrack{animation-duration:40s}
 }
+@media(prefers-reduced-motion:reduce){
+  .revtrack{animation:none}
+}
