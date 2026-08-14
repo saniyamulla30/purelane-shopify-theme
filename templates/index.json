@@ -83,10 +83,99 @@
         "badge_text": "Best seller",
         "button_text": "Add to cart"
       }
+    },
+    "purelane_combos_xBxjcx": {
+      "type": "purelane-combos",
+      "name": "Purelane Combos",
+      "settings": {
+        "kicker": "Save more",
+        "heading": "Best selling combos"
+      }
+    },
+    "purelane_bundles_gCtpgj": {
+      "type": "purelane-bundles",
+      "blocks": {
+        "tier_rEdnFD": {
+          "type": "tier",
+          "settings": {
+            "tag": "Starter",
+            "qty_number": 2,
+            "price": "₹349",
+            "compare_price": "₹598",
+            "per_product_note": "Flat ₹174 per product",
+            "feature_1": "Pick any two products",
+            "feature_2": "",
+            "feature_3": "Free shipping across India",
+            "button_text": "Build this box",
+            "button_link": "",
+            "featured": false,
+            "product_1": "tap-cleaner-limescale-remover",
+            "product_2": "foaming-kitchen-cleaner",
+            "product_3": "",
+            "product_4": "",
+            "product_5": ""
+          }
+        },
+        "tier_QMG39m": {
+          "type": "tier",
+          "settings": {
+            "tag": "Most popular",
+            "qty_number": 3,
+            "price": "₹499",
+            "compare_price": "₹897",
+            "per_product_note": "Flat ₹166 per product",
+            "feature_1": "Pick any three products",
+            "feature_2": "Covers kitchen and laundry",
+            "feature_3": "Free shipping across India",
+            "button_text": "Build this box",
+            "button_link": "",
+            "featured": true,
+            "product_1": "foaming-kitchen-cleaner",
+            "product_2": "tap-cleaner-limescale-remover",
+            "product_3": "dishwash-gel",
+            "product_4": "",
+            "product_5": ""
+          }
+        },
+        "tier_NTh9Nm": {
+          "type": "tier",
+          "settings": {
+            "tag": "Whole home",
+            "qty_number": 5,
+            "price": "₹799",
+            "compare_price": "₹1495",
+            "per_product_note": "Flat ₹160 per product",
+            "feature_1": "Pick any five products",
+            "feature_2": "Every room in one order",
+            "feature_3": "Free shipping across India",
+            "button_text": "Build this box",
+            "button_link": "",
+            "featured": false,
+            "product_1": "foaming-kitchen-cleaner",
+            "product_2": "tap-cleaner-limescale-remover",
+            "product_3": "herbal-floor-cleaner",
+            "product_4": "toilet-cleaner",
+            "product_5": "laundry-detergent"
+          }
+        }
+      },
+      "block_order": [
+        "tier_rEdnFD",
+        "tier_QMG39m",
+        "tier_NTh9Nm"
+      ],
+      "name": "Purelane Bundles",
+      "settings": {
+        "kicker": "Build your bundle",
+        "heading": "One box. Every room.",
+        "lede": "Mix and match across kitchen, laundry, home and skin. One flat price, no code needed, free shipping either way."
+      }
     }
   },
   "order": [
     "purelane_hero_Ckf3gQ",
-    "purelane_shop_C73jhb"
+    "purelane_shop_C73jhb",
+    "purelane_combos_xBxjcx",
+    "purelane_bundles_gCtpgj"
   ]
 }
