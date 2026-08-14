@@ -44,10 +44,13 @@
 
 .tier .price{font-family:'Outfit',sans-serif;font-weight:700;font-size:27px;color:var(--accent);margin:16px 0 4px}
 .tier .price s{
-  font-size:17px;
-  color:var(--paper-3);
-  font-weight:500;
-  margin-left:8px;
+  font-size:18px !important;
+  line-height:1 !important;
+  color:var(--paper-3) !important;
+  font-weight:600 !important;
+  margin-left:8px !important;
+  display:inline-block;
+  vertical-align:middle;
 }
 
 .tier ul{
