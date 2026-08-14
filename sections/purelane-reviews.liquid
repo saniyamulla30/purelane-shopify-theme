@@ -1,0 +1,65 @@
+{{ 'section-reviews.css' | asset_url | stylesheet_tag }}
+
+<section class="sec revband" id="reviews" data-scene="1">
+  <div class="wrap">
+    <div class="revhead rv">
+      <span class="kicker">{{ section.settings.kicker }}</span>
+      <span class="agg"><span class="st">★★★★★</span> <b>{{ section.settings.average_rating }}</b> from {{ section.settings.stat_1 }}</span>
+      <span class="agg">{{ section.settings.stat_2 }}</span>
+    </div>
+  </div>
+
+  {%- assign reviews = shop.metaobjects.review.values -%}
+
+  {%- if reviews.size == 0 -%}
+    {%- if request.design_mode -%}
+      <div class="wrap">
+        <div class="glass sec-pad" style="text-align:center">
+          <p>Add a few "Review" entries under Content → Metaobjects to show them here.</p>
+        </div>
+      </div>
+    {%- endif -%}
+  {%- else -%}
+    <div class="revrail rv" aria-label="Customer reviews">
+      <div class="revtrack">
+        {%- for pass in (1..2) -%}
+          {%- for review in reviews -%}
+            <article class="glass-2 rcard">
+              <div class="st">
+                {%- for s in (1..5) -%}
+                  {%- if s <= review.rating.value -%}★{%- else -%}☆{%- endif -%}
+                {%- endfor -%}
+              </div>
+              <h5>{{ review.quote_title.value }}</h5>
+              <p>{{ review.quote_body.value }}</p>
+              <div class="who">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg>
+                <b>{{ review.reviewer_name.value }}</b>
+                {%- if review.product.value != blank -%}
+                  <span>· {{ review.product.value.title }}</span>
+                {%- endif -%}
+              </div>
+            </article>
+          {%- endfor -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  {%- endif -%}
+</section>
+
+{% schema %}
+{
+  "name": "Purelane Reviews",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Kicker text", "default": "That's what they said" },
+    { "type": "text", "id": "average_rating", "label": "Average rating", "default": "4.8" },
+    { "type": "text", "id": "stat_1", "label": "Review count text", "default": "8,000+ reviews" },
+    { "type": "text", "id": "stat_2", "label": "Second stat text", "default": "Loved by 12 lakh+ homes" }
+  ],
+  "presets": [
+    { "name": "Purelane Reviews" }
+  ]
+}
+{% endschema %}
