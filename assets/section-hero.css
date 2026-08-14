@@ -94,3 +94,6 @@
   .ptag{padding:9px 12px 10px;border-radius:14px;max-width:58%}
   .ptag .val strong{font-size:20px}
 }
+@media(prefers-reduced-motion:reduce){
+  .hslide,.hp,.ptag{transition-duration:.01ms !important}
+}
