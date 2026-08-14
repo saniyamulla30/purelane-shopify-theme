@@ -2,7 +2,12 @@
 .tiers{display:grid;gap:14px;grid-template-columns:1fr}
 @media(min-width:760px){.tiers{grid-template-columns:repeat(3,1fr)}}
 
-.tier{padding:24px 22px;transition:.4s var(--ease,ease)}
+.tier{
+  padding:24px 22px;
+  transition:.4s var(--ease,ease);
+  display:flex;
+  flex-direction:column;
+}
 .tier:hover{transform:translateY(-5px)}
 
 .tier.best{
@@ -11,9 +16,17 @@
 }
 
 .tier .tag{
-  display:inline-block;font-size:9.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
-  padding:5px 11px;border-radius:999px;margin-bottom:14px;
-  background:rgba(201,118,29,.14);border:1px solid rgba(201,118,29,.34);color:#4f7d10;
+  display:inline-block;
+  font-size:9.5px;
+  font-weight:800;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  padding:5px 11px;
+  border-radius:999px;
+  margin-bottom:14px;
+  background:rgba(231,255,63,.14);
+  border:1px solid rgba(231,255,63,.45);
+  color:#E7FF3F;
 }
 
 /* ---------- TIER PRODUCT PREVIEW ROW ---------- */
@@ -32,12 +45,21 @@
 .tier .price{font-family:'Outfit',sans-serif;font-weight:700;font-size:27px;color:var(--accent);margin:16px 0 4px}
 .tier .price s{font-size:14px;color:var(--paper-3);font-weight:500;margin-left:8px}
 
-.tier ul{list-style:none;margin:16px 0 20px;display:grid;gap:8px}
+.tier ul{
+  list-style:none;
+  margin:16px 0 20px;
+  display:grid;
+  gap:8px;
+  flex:1;
+}
 .tier li{display:flex;gap:9px;font-size:13px;color:var(--paper-2)}
 .tier li svg{width:14px;height:14px;color:#4f7d10;flex:0 0 auto;margin-top:4px}
 
-.tier .btn{width:100%;justify-content:center}
-
+.tier .btn{
+  width:100%;
+  justify-content:center;
+  margin-top:auto;
+}
 @media(max-width:760px){
   .tierpix{height:70px}
   .tierpix .pimg{height:54px}
