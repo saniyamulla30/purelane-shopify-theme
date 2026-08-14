@@ -170,12 +170,23 @@
         "heading": "One box. Every room.",
         "lede": "Mix and match across kitchen, laundry, home and skin. One flat price, no code needed, free shipping either way."
       }
+    },
+    "purelane_reviews_hznpJU": {
+      "type": "purelane-reviews",
+      "name": "Purelane Reviews",
+      "settings": {
+        "kicker": "That's what they said",
+        "average_rating": "4.8",
+        "stat_1": "8,000+ reviews",
+        "stat_2": "Loved by 12 lakh+ homes"
+      }
     }
   },
   "order": [
     "purelane_hero_Ckf3gQ",
     "purelane_shop_C73jhb",
     "purelane_combos_xBxjcx",
-    "purelane_bundles_gCtpgj"
+    "purelane_bundles_gCtpgj",
+    "purelane_reviews_hznpJU"
   ]
 }
