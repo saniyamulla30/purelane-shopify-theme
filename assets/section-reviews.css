@@ -38,6 +38,9 @@
 }
 .rcard .who b{color:#01423b;font-weight:700}
 .rcard .who svg{width:12px;height:12px;color:#4f7d10;flex:0 0 auto}
+.rcard .who{flex-wrap:nowrap}
+.rcard .who b{flex:0 0 auto;white-space:nowrap}
+.rcard .who span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:150px}
 
 @media(max-width:760px){
   .rcard{width:250px;padding:13px 14px}
