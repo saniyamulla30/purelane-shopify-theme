@@ -1,0 +1,48 @@
+/* ---------- BUNDLES / PRICING TIERS ---------- */
+.tiers{display:grid;gap:14px;grid-template-columns:1fr}
+@media(min-width:760px){.tiers{grid-template-columns:repeat(3,1fr)}}
+
+.tier{padding:24px 22px;transition:.4s var(--ease,ease)}
+.tier:hover{transform:translateY(-5px)}
+
+.tier.best{
+  border-color:rgba(201,118,29,.46);
+  box-shadow:0 26px 74px rgba(18,12,34,.24),0 0 0 1px rgba(201,118,29,.24);
+}
+
+.tier .tag{
+  display:inline-block;font-size:9.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
+  padding:5px 11px;border-radius:999px;margin-bottom:14px;
+  background:rgba(201,118,29,.14);border:1px solid rgba(201,118,29,.34);color:#4f7d10;
+}
+
+/* ---------- TIER PRODUCT PREVIEW ROW ---------- */
+.tierpix{
+  display:flex;align-items:flex-end;justify-content:center;gap:2px;height:78px;margin:-4px 0 16px;
+  padding:8px 6px;border-radius:14px;
+  background:linear-gradient(162deg,rgba(255,255,255,.54),rgba(236,230,247,.34));
+  border:1px solid rgba(75,58,143,.10);
+}
+.tierpix .pimg{height:62px;max-width:70px;object-fit:contain;filter:drop-shadow(0 8px 12px rgba(0,74,66,.13))}
+.tierpix.five .pimg{height:54px;max-width:52px}
+
+.tier .qty{font-family:'Outfit',sans-serif;font-weight:800;font-size:52px;line-height:.9;color:var(--surface);letter-spacing:-.03em}
+.tier .qty small{font-size:14px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--paper-3);display:block;margin-top:6px}
+
+.tier .price{font-family:'Outfit',sans-serif;font-weight:700;font-size:27px;color:var(--accent);margin:16px 0 4px}
+.tier .price s{font-size:14px;color:var(--paper-3);font-weight:500;margin-left:8px}
+
+.tier ul{list-style:none;margin:16px 0 20px;display:grid;gap:8px}
+.tier li{display:flex;gap:9px;font-size:13px;color:var(--paper-2)}
+.tier li svg{width:14px;height:14px;color:#4f7d10;flex:0 0 auto;margin-top:4px}
+
+.tier .btn{width:100%;justify-content:center}
+
+@media(max-width:760px){
+  .tierpix{height:70px}
+  .tierpix .pimg{height:54px}
+  .tierpix.five .pimg{height:46px}
+}
+@media(max-width:600px){
+  .tier .qty{font-size:44px}
+}
