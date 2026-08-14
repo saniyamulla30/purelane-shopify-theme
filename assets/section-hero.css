@@ -21,7 +21,7 @@
 .hero-cta{display:flex;gap:11px;flex-wrap:wrap;margin-top:26px}
 
 .hero-prod{
-  flex:0 0 560px;width:560px;position:relative;
+  flex:0 0 600px;width:600px;position:relative;
   margin-left:auto;z-index:2;overflow:hidden;
   filter:drop-shadow(0 34px 54px rgba(2,20,19,.6))
 }
@@ -64,12 +64,12 @@
 .hslide.on .hp.d2{transition-delay:.30s}
 .hslide.on .hp.d3{transition-delay:.54s}
 
-.hs1 .a{height:66%;z-index:3}
-.hs2 .a{height:50%;margin-right:-5%;z-index:1}
-.hs2 .b{height:62%;z-index:3}
-.hs3 .a{height:46%;margin-right:-5%;z-index:1;order:1}
-.hs3 .c{height:64%;z-index:3;order:2}
-.hs3 .b{height:50%;margin-left:-5%;z-index:2;order:3}
+.hs1 .a{width:68%;z-index:3}
+.hs2 .a{width:44%;margin-right:-5%;z-index:1}
+.hs2 .b{width:54%;z-index:3}
+.hs3 .a{width:31%;margin-right:-4%;z-index:1;order:1}
+.hs3 .c{width:40%;z-index:3;order:2}
+.hs3 .b{width:32%;margin-left:-4%;z-index:2;order:3}
 
 .ptag{position:absolute;left:0;bottom:2%;z-index:6;padding:11px 14px 12px;border-radius:16px;max-width:52%;
   opacity:0;transform:translateY(16px);
