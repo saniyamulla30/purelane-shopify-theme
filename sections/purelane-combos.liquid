@@ -54,10 +54,12 @@
               <h3>{{ combo.title.value }}</h3>
               <div class="cnt">{{ products.size }} products</div>
               <p class="inc">
-                Includes:
-                {%- for product in products -%}
-                  {{ product.title }}{% unless forloop.last %}{% if forloop.rindex == 2 %} &amp; {% else %}, {% endif %}{% endunless %}
-                {%- endfor -%}.
+                {%- capture inc_list -%}
+                  {%- for product in products -%}
+                    {{ product.title }}{% unless forloop.last %}{% if forloop.rindex == 2 %} &amp; {% else %}, {% endif %}{% endunless %}
+                  {%- endfor -%}
+                {%- endcapture -%}
+                Includes: {{ inc_list | strip }}.
               </p>
               <div class="prow">
                 <strong>₹{{ combo_price }}</strong>
