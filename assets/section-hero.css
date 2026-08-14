@@ -71,7 +71,7 @@
 .hs3 .c{width:40%;z-index:3;order:2}
 .hs3 .b{width:32%;margin-left:-4%;z-index:2;order:3}
 
-.ptag{position:absolute;left:0;bottom:2%;z-index:6;padding:11px 14px 12px;border-radius:16px;max-width:52%;
+.ptag{position:absolute;left:0;top:2%;z-index:6;padding:11px 14px 12px;border-radius:16px;max-width:52%;
   opacity:0;transform:translateY(16px);
   background:rgba(8,14,34,.86);border:1px solid rgba(255,255,255,.14);
   backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
