@@ -80,3 +80,62 @@ shopify theme dev --store=falah-devstore.myshopify.com --theme=149578612957
 shopify theme push --store=falah-devstore.myshopify.com --theme=149578612957
 shopify theme pull --store=falah-devstore.myshopify.com --theme=149578612957
 ```
+## Changes from the original mockup
+
+The brief asks us to reproduce the design exactly but flag and fix anything in the
+underlying HTML/CSS that's wrong for production — semantics, accessibility,
+performance, or breakpoint logic — rather than silently rebuilding it. Below is
+what we found and changed, and what we deliberately left alone.
+
+### What was already correct (left unchanged)
+The original mockup has solid accessibility fundamentals: `aria-label`s on all
+icon buttons, `aria-hidden="true"` on decorative SVGs and background art,
+`role="img"` + `aria-label` on the CSS-drawn product placeholders, and proper
+`<nav aria-label="...">` landmarks. These were preserved as-is in every section.
+
+### Semantics
+The original had no real `<img>` elements anywhere — every "product photo" was a
+styled `<span role="img" aria-label="...">` faking an image, because the mockup
+never had real product photography to work with. Once we wired the sections to
+live Shopify product data, we replaced these with real `<img>` tags sourced from
+`product.featured_image`, which is the semantically correct element now that
+there's real image content to render. Where a product genuinely has no image
+(our missing-image edge case), we kept the original's placeholder pattern
+(`role="img"` span with an inline SVG icon) rather than showing a broken `<img>`.
+
+### Accessibility
+- **Alt text**: every real product image uses
+  `product.featured_image.alt | default: product.title` so screen readers get a
+  meaningful label sourced from actual product data, with the product title as a
+  safe fallback if a merchant never fills in image alt text.
+- **Reduced motion**: the original mockup has one global
+  `@media(prefers-reduced-motion:reduce)` rule that disables all animation for
+  users who've set that OS-level preference. Splitting the page into independent
+  section CSS files (per Dawn's architecture) meant that rule didn't automatically
+  carry over to the new custom animations we built — the Hero slide transitions
+  and the Reviews marquee scroll. We added equivalent `prefers-reduced-motion`
+  overrides directly into `section-hero.css` and `section-reviews.css` so these
+  new animations respect the same user preference the rest of the page does.
+
+### Performance
+The original shipped zero image bytes for products (pure CSS/SVG art), so there
+was no lazy-loading strategy to speak of. Once real product photography was
+introduced, three below-the-fold sections (Shop, Combos, Bundles) started loading
+real image weight. We added `loading="lazy"` plus explicit `width`/`height`
+attributes (computed from `product.featured_image.aspect_ratio`) to every product
+image in those sections, so offscreen images defer loading and the browser can
+reserve layout space upfront to prevent shift as they load in. Hero's product
+images are intentionally left eager (no `loading="lazy"`), since they're above the
+fold on page load and lazy-loading them would delay the very first thing a visitor
+sees.
+
+### Breakpoint / responsive logic
+The Hero product-image sizing in the original was built around freely-scalable
+vector art, using height-based percentage sizing. Real photographed products have
+fixed aspect ratios, and that same height-based approach caused product images to
+overflow their container width and visually collide with the heading text at
+several viewport widths. We rebuilt the sizing model to be width-based and bounded
+instead (`.hp{width:X%}` with `img{width:100%;height:auto;max-height:100%}`),
+which keeps every slide's image group within its container regardless of the real
+photo's aspect ratio. Full debugging path is documented above under "Notable
+issues and recovery."
